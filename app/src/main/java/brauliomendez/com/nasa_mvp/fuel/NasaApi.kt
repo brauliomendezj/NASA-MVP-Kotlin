@@ -8,7 +8,7 @@ import com.google.gson.Gson
 /**
  * Created by Braulio on 22/12/2016.
  */
-class NasaApi : AbstractApi() {
+public class NasaApi : AbstractApi() {
 
     override fun getBaseUrl(): String = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key={api_key}"
 
