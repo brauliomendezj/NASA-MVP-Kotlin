@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NASA - MVP</string>
+
+    <string name="base_url">"https://api.nasa.gov/mars-photos/api/</string>
+    <string name="photos_param">v1/rovers/curiosity/photos?sol=1000&amp;api_key={api_key}</string>
+    <string name="api_key">kKoXIMVlkEUs63Mwuf668kuxUive3KTvdwObcwqT</string>
 </resources>

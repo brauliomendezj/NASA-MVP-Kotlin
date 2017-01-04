@@ -1,8 +1,11 @@
 package brauliomendez.com.nasa_mvp.model
 
+import com.google.gson.annotations.SerializedName
+
 /**
- * Created by Braulio on 19/12/2016.
+ * @author Braulio Méndez Jiménez
+ * @since 19/12/16
  */
-data class Example(var photos : List<Photo>){
+data class Example(@SerializedName("photos") var photos : List<Photo>){
 
 }

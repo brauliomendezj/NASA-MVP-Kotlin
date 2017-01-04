@@ -1,16 +1,19 @@
 package brauliomendez.com.nasa_mvp.model
 
+import com.google.gson.annotations.SerializedName
+
 /**
- * Created by Braulio on 19/12/2016.
+ * @author Braulio Méndez Jiménez
+ * @since 19/12/16
  */
-data class Rover(var id : Int?,
-                 var name : String?,
-                 var landigDate : String?,
-                 var launchDate : String?,
-                 var status : String?,
-                 var maxSol : Int?,
-                 var maxDate : String?,
-                 var totalPhotos : Int?,
-                 var cameras : List<Camera_>?){
+data class Rover(@SerializedName("id") var id : Int?,
+                 @SerializedName("name") var name : String?,
+                 @SerializedName("landing_date") var landingDate : String?,
+                 @SerializedName("launch_date") var launchDate : String?,
+                 @SerializedName("status") var status : String?,
+                 @SerializedName("max_sol") var maxSol : Int?,
+                 @SerializedName("max_date") var maxDate : String?,
+                 @SerializedName("total_photos") var totalPhotos : Int?,
+                 @SerializedName("cameras") var cameras : List<Camera_>?){
 
 }
