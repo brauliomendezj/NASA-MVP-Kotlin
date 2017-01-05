@@ -3,6 +3,7 @@ package brauliomendez.com.nasa_mvp.retrofit
 import brauliomendez.com.nasa_mvp.model.Example
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  * @author Braulio Méndez Jiménez
@@ -10,6 +11,6 @@ import retrofit2.http.GET
  */
 interface NasaService {
 
-    @GET("v1/rovers/curiosity/photos?sol=1000&api_key=kKoXIMVlkEUs63Mwuf668kuxUive3KTvdwObcwqT")
-    fun getCuriosityPhotos() : Call<Example>
+    @GET(ApiConstants.PHOTOS)
+    fun getCuriosityPhotos(@Query("api_key") apiKey : String) : Call<Example>
 }

@@ -21,7 +21,7 @@ class NasaClient {
         builder.networkInterceptors().add(httpLoggingInterceptor)
 
         val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.nasa.gov/mars-photos/api/")
+                .baseUrl(ApiConstants.BASE_URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(builder.build())

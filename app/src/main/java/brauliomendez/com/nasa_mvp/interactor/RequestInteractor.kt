@@ -1,5 +1,6 @@
 package brauliomendez.com.nasa_mvp.interactor
 
+import brauliomendez.com.nasa_mvp.BuildConfig
 import brauliomendez.com.nasa_mvp.model.Example
 import brauliomendez.com.nasa_mvp.model.Photo
 import brauliomendez.com.nasa_mvp.retrofit.NasaClient
@@ -15,7 +16,7 @@ class RequestInteractor {
 
     fun getPictures(callback : (photos : List<Photo?>) -> Unit) {
         NasaClient().nasaService
-                .getCuriosityPhotos()
+                .getCuriosityPhotos(BuildConfig.API_KEY)
                 .enqueue(object : Callback<Example> {
                     override fun onResponse(call: Call<Example>?, response: Response<Example>?) {
                         callback(response!!.body().photos)

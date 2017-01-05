@@ -1,6 +1,10 @@
 package brauliomendez.com.nasa_mvp.presenter
 
+import android.app.Activity
+import android.content.Intent
+import brauliomendez.com.nasa_mvp.adapter.NasaAdapter
 import brauliomendez.com.nasa_mvp.interactor.RequestInteractor
+import brauliomendez.com.nasa_mvp.model.Photo
 import brauliomendez.com.nasa_mvp.view.RequestView
 
 /**
