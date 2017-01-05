@@ -3,9 +3,9 @@ package brauliomendez.com.nasa_mvp.interactor
 import brauliomendez.com.nasa_mvp.model.Example
 import brauliomendez.com.nasa_mvp.model.Photo
 import brauliomendez.com.nasa_mvp.retrofit.NasaClient
-import rx.Subscriber
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * @author Braulio Méndez Jiménez
@@ -16,21 +16,14 @@ class RequestInteractor {
     fun getPictures(callback : (photos : List<Photo?>) -> Unit) {
         NasaClient().nasaService
                 .getCuriosityPhotos()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe (object : Subscriber<Example>(){
-                    override fun onCompleted() {
-
+                .enqueue(object : Callback<Example> {
+                    override fun onResponse(call: Call<Example>?, response: Response<Example>?) {
+                        callback(response!!.body().photos)
                     }
 
-                    override fun onNext(t: Example?) {
-                        callback(t!!.photos)
-                    }
-
-                    override fun onError(e: Throwable?) {
+                    override fun onFailure(call: Call<Example>?, t: Throwable?) {
 
                     }
-
                 })
     }
 }

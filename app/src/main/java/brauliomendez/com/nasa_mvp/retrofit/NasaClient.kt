@@ -7,7 +7,8 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * Created by Braulio on 02/01/2017.
+ * @author Braulio Méndez Jiménez
+ * @since 02/01/17
  */
 class NasaClient {
 

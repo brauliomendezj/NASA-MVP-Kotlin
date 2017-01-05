@@ -38,6 +38,6 @@ class MainActivity : AppCompatActivity(), RequestView {
     }
 
     override fun showNasaPictures(pictures: List<Photo?>) {
-        adapter.items = pictures as ArrayList<Photo?>
+       adapter.addItems(pictures as ArrayList<Photo?>)
     }
 }
